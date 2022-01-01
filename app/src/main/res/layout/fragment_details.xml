@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.crunch.DetailViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/Detail_background"
+            android:layout_width="411dp"
+            android:layout_height="809dp"
+            android:layout_marginBottom="36dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/etTitle"
+            android:layout_width="270dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="432dp"
+            android:fontFamily="@font/cairo_bold"
+            android:text="@{viewModel.liveFood.title}"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Food title" />
+
+
+        <TextView
+            android:id="@+id/etSummary"
+            android:layout_width="339dp"
+            android:layout_height="93dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="32dp"
+            android:maxLines="5"
+           app:parced="@{viewModel.liveFood.summary}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTitle"
+            tools:text="Food Title: nicdndii ucindcdndnidndicdnindindc" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/Qty_cardview"
+            android:layout_width="371dp"
+            android:layout_height="136dp"
+            android:layout_marginBottom="84dp"
+            app:cardCornerRadius="59dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/qttbctwo">
+
+                <Button
+                    android:id="@+id/order_food"
+                    android:layout_width="125dp"
+                    android:layout_height="43dp"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="#FF0000"
+                    android:text="Order Now"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView12"
+                    app:layout_constraintHorizontal_bias="0.323"
+                    app:layout_constraintStart_toStartOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/dollar_numb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="92dp"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="104dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="$  .99"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/order_food"
+                    app:layout_constraintStart_toEndOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginBottom="84dp"
+                    android:text="Quantity"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/incr_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:backgroundTint="#FF0000"
+                    android:text="+"
+                    app:layout_constraintEnd_toStartOf="@+id/order_food"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <Button
+                    android:id="@+id/decr_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FF0000"
+                    android:text="-"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/qty_numb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/incr_btn"
+                    app:layout_constraintHorizontal_bias="0.509"
+                    app:layout_constraintStart_toEndOf="@+id/decr_btn"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="327dp"
+            android:layout_height="198dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="336dp"
+                android:layout_height="203dp">
+
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    imgUrl="@{viewModel.liveFood.image}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:scaleType="centerCrop"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="144dp"
+                    app:srcCompat="@drawable/ic_baseline_favorite_24"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/imageView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="145dp"
+                    android:layout_marginEnd="19dp"
+                    app:srcCompat="@drawable/ic_baseline_timer_24"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="100"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="30"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="356dp"
+            android:layout_height="76dp"
+            android:id="@+id/check_list"
+            android:layout_marginBottom="352dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    app:tint="#43D80C"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="9dp"
+                    android:src="@drawable/ic_baseline_check_circle_24" />
+
+                <ImageView
+                    android:id="@+id/imageView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:tint="#43D80C"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/ic_baseline_check_circle_24" />
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="265dp"
+                    android:layout_marginTop="13dp"
+                    android:src="@drawable/ic_baseline_check_circle_24"
+                    app:tint="#43D80C" />
+
+                <ImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="37dp"
+                    android:src="@drawable/ic_baseline_check_circle_24" />
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="150dp"
+                    app:tint="#43D80C"
+                    android:layout_marginTop="42dp"
+                    android:src="@drawable/ic_baseline_check_circle_24" />
+
+                <ImageView
+                    android:id="@+id/imageView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    app:tint="#43D80C"
+                    android:layout_marginStart="266dp"
+                    android:layout_marginTop="44dp"
+                    android:src="@drawable/ic_baseline_check_circle_24" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:textColor="#43D80C"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Vegan" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="41dp"
+                    android:text="Vegitarian" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="185dp"
+                    android:layout_marginTop="45dp"
+                    android:text="Delicious"
+                    android:textColor="#43D80C" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#43D80C"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="295dp"
+                    android:layout_marginTop="47dp"
+                    android:text="Cheap" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="184dp"
+                    android:layout_marginTop="13dp"
+                    android:text="Appitizing"
+                    android:textColor="#43D80C" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#43D80C"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="295dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Helthy" />
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

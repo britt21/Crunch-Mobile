@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.crunch.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" >
+        <action
+
+
+            android:id="@+id/action_foodFragment_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+        <argument
+            android:name="backfrombttomsheet"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_foodFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.crunch.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_orderList"
+            app:destination="@id/orderList" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.crunch.Settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings"/>
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.example.crunch.BottomSheetFragment"
+        android:label="fragment_bottom_sheet"
+        tools:layout="@layout/fragment_bottom_sheet" >
+        <action
+            android:id="@+id/action_bottomSheetFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.crunch.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <argument android:name="selectedProperty"
+            app:argType="com.example.crunch.foodlist.Result"/>
+        <action
+            android:id="@+id/action_detailsFragment_to_paySucess2"
+            app:destination="@id/paySucess" />
+    </fragment>
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.crunch.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_loginPage"
+            app:destination="@id/loginPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/paySucess"
+        android:name="com.example.crunch.PaySucess"
+        android:label="fragment_pay_sucess"
+        tools:layout="@layout/fragment_pay_sucess" >
+        <action
+            android:id="@+id/action_paySucess_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPage"
+        android:name="com.example.crunch.LoginPage"
+        android:label="fragment_login_page"
+        tools:layout="@layout/fragment_login_page" >
+        <action
+            android:id="@+id/action_loginPage_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderList"
+        android:name="com.example.crunch.OrderList"
+        android:label="fragment_order_list"
+        tools:layout="@layout/fragment_order_list" />
+
+</navigation>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "943487283514",
+    "project_id": "crunch-mobile",
+    "storage_bucket": "crunch-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943487283514:android:99a5c128d0063cdc672003",
+        "android_client_info": {
+          "package_name": "com.example.crunch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943487283514-omdkdgfoh37h4fh6o48r08ap66vrq09o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuG2dKbs55q6eP63Ui9TBFh8Hvf8mzdq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943487283514-omdkdgfoh37h4fh6o48r08ap66vrq09o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
