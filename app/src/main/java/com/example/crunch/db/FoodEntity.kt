@@ -8,6 +8,6 @@ import com.example.crunch.foodlist.FoodList
 @Entity
 data class FoodEntity(
     @PrimaryKey
-    val foodList: FoodList
+    val foodList: FoodList,
 )
 

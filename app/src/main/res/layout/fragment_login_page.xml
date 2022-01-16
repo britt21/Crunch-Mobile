@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginPage">
+    tools:context=".db.LoginPage">
+
+
 
 
     <EditText
@@ -19,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338" />
+        app:layout_constraintVertical_bias="0.339" />
 
     <EditText
         android:id="@+id/pass_text"
@@ -43,4 +45,16 @@
         app:layout_constraintEnd_toEndOf="@+id/pass_text"
         app:layout_constraintStart_toStartOf="@+id/pass_text"
         app:layout_constraintTop_toBottomOf="@+id/pass_text" />
+
+    <Button
+        android:id="@+id/log_btn2"
+        android:layout_width="202dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="88dp"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="@+id/pass_text"
+        app:layout_constraintStart_toStartOf="@+id/pass_text"
+        app:layout_constraintTop_toBottomOf="@+id/pass_text" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splash">
+    app:startDestination="@id/loginPage">
 
     <fragment
         android:id="@+id/foodFragment"
-        android:name="com.example.crunch.FoodFragment"
+        android:name="com.example.crunch.ui.FoodFragment"
         android:label="fragment_food"
         tools:layout="@layout/fragment_food" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.crunch.AccountFragment"
+        android:name="com.example.crunch.ui.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" >
         <action
@@ -36,12 +36,12 @@
     </fragment>
     <fragment
         android:id="@+id/settings"
-        android:name="com.example.crunch.Settings"
+        android:name="com.example.crunch.ui.Settings"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings"/>
     <dialog
         android:id="@+id/bottomSheetFragment"
-        android:name="com.example.crunch.BottomSheetFragment"
+        android:name="com.example.crunch.ui.BottomSheetFragment"
         android:label="fragment_bottom_sheet"
         tools:layout="@layout/fragment_bottom_sheet" >
         <action
@@ -50,7 +50,7 @@
     </dialog>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.crunch.DetailsFragment"
+        android:name="com.example.crunch.ui.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
         <action
@@ -73,7 +73,7 @@
     </fragment>
     <fragment
         android:id="@+id/paySucess"
-        android:name="com.example.crunch.PaySucess"
+        android:name="com.example.crunch.model.PaySucess"
         android:label="fragment_pay_sucess"
         tools:layout="@layout/fragment_pay_sucess" >
         <action
@@ -82,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginPage"
-        android:name="com.example.crunch.LoginPage"
+        android:name="com.example.crunch.db.LoginPage"
         android:label="fragment_login_page"
         tools:layout="@layout/fragment_login_page" >
         <action
@@ -91,7 +91,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderList"
-        android:name="com.example.crunch.OrderList"
+        android:name="com.example.crunch.model.OrderList"
         android:label="fragment_order_list"
         tools:layout="@layout/fragment_order_list" />
 
